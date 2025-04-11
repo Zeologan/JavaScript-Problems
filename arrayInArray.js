@@ -1,3 +1,4 @@
+// create nested array length of the nested array based on target 
 arr = [1,2,3,4,5,6,7];
 target = 2
 max = [];
