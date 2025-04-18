@@ -1,8 +1,9 @@
 // Create a Alarm Which Console Ring... [User Define Time] 
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
-const hour = prompt('Hour :');
-const min = prompt('min :');
+//UserInput 
+const hour = parseInt(prompt('Hour :'));
+const min = parseInt(prompt('min :'));
 
 const alarm = setInterval(ringAlarm,1000);
 function ringAlarm (){
@@ -14,6 +15,9 @@ function ringAlarm (){
         clearInterval(alarm);
     }
 }
+
+
+
 
 
 
