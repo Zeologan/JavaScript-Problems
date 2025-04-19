@@ -4,8 +4,12 @@ const prompt = PromptSync();
 //UserInput 
 const hour = parseInt(prompt('Hour :'));
 const min = parseInt(prompt('min :'));
-
-const alarm = setInterval(ringAlarm,1000);
+let alarm;
+if(hour < 24 && min < 60){
+    alarm = setInterval(ringAlarm,1000);
+}else{
+    console.log('Time is Not Valid !!')
+}
 function ringAlarm (){
     let time = new Date();
     let realHour = time.getHours();
