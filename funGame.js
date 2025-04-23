@@ -1,5 +1,4 @@
 // let create a game of stone , paper , scissor
-
 // Stone = 1  ~ 2
 // Paper = 2 ~ 3
 // Scissor = 3 ~ 1
@@ -15,13 +14,7 @@ function funGame() {
     let user = parseInt(prompt("Choose 1.Stone | 2.Paper | 3.Scissor : "));
     if (user == comp) {
       console.log("Draw");
-    } else if (user == 1 && comp == 3) {
-      userCount++;
-      console.log(`User Won This Round!... Score is : ${userCount}`);
-    } else if (user == 2 && comp == 1) {
-      userCount++;
-      console.log(`User Won This Round!... Score is : ${userCount}`);
-    } else if (user == 3 && comp == 2) {
+    } else if ((user == 1 && comp == 3) || (user == 2 && comp == 1) || (user == 3 && comp == 2)) {
       userCount++;
       console.log(`User Won This Round!... Score is : ${userCount}`);
     } else {
@@ -30,6 +23,8 @@ function funGame() {
     }
     round++;
   }
+
+//   Check Who Won The Match 
   if(userCount > compCount){
     console.log(`User Won this Match by ${userCount} Points ..... !!!!`);
   }else if(userCount == compCount){
