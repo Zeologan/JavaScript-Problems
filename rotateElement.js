@@ -1,7 +1,5 @@
 // Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
- 
-
 // Example 1:
 // Input: nums = [1,2,3,4,5,6,7], k = 3
 // Output: [5,6,7,1,2,3,4]
@@ -17,12 +15,23 @@
 // rotate 1 steps to the right: [99,-1,-100,3]
 // rotate 2 steps to the right: [3,99,-1,-100]
 
-var rotate = function(nums, k) {
-    let i = 0;
-    while(i < k){
-        nums.unshift(nums.pop())
-        i++
+// var rotate = function(nums, k) {
+//     let i = 0;
+//     while(i < k){
+//         nums.unshift(nums.pop())
+//         i++
+//     }
+//     console.log(nums)
+// };
+// rotate([1,2,3,4,5,6,7], 3);
+
+function rotate(nums,k){
+    let size = nums.length;
+    if(k > size){
+        k = k%size;
     }
-    console.log(nums)
-};
-rotate([1,2,3,4,5,6,7], 3)
+    const rotated = nums.splice(size - k, k);
+    nums.unshift(...rotated);
+    console.log(nums);
+}
+rotate([1,2], 5)
